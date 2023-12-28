@@ -1,0 +1,34 @@
+.box{
+    margin: 0 15px 0 15px;
+    height: 154px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 15px;
+    margin: 15px 0;
+    text-decoration: none;
+    box-shadow: 0 0 10px 0 #e0dcd0;
+    box-sizing: border-box;
+    .avatar_img{
+        width: 156px;
+        height: 120px;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 2% 0 0;
+        border: 5px solid #e0dcd0;
+      }
+      .teaser{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-bottom: 0 15px;
+        color: #000 ;
+        .goTo{
+            color: #6b001c;
+            font-weight: 700;
+            margin: 20px 0px;
+          }
+    }
+    
+}

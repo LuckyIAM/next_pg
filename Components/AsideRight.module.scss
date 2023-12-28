@@ -1,0 +1,39 @@
+.wrapper{
+    font-size: 18px;
+    min-height: 100%;
+    box-sizing: border-box;
+    .name_title img{
+        width: 99%;
+        margin: 10px;
+        object-fit: cover;
+    }
+    .card_container{
+        width: 98%;
+        text-decoration: none;
+        float: left;
+        color: #6b001c;
+        text-shadow: 1px 0 1px #fff, 
+        0 1px 1px #fff, 
+        -1px 0 1px #fff, 
+        0 -1px 1px #fff;
+        font-weight: 700;
+        box-shadow: 0 0 10px 0 #ddd;
+        margin: 10px;
+        padding: 5px;
+        .icon{
+            img{
+                float: left;
+                object-fit: contain;
+                width: 96px;
+                height: 138px;
+                margin: 10px ;
+                box-shadow: 0 0 10px 0 #999;
+                border-radius: 5%;
+            }
+        }
+        .text_container{
+            margin: 30px;
+            font-size: 16px;
+        }
+    }
+}

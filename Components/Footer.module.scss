@@ -1,0 +1,24 @@
+.footer{
+    padding: 20px 1%;
+    background: #D0CDB9;
+    height: 230px;  
+    font-weight: 700;
+    
+    .wraper_footer{
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        .href_contact{
+            color: #6b001c;
+        }
+        .email, .legal_address, 
+        .abonement, .actual_address{
+            margin: 15px 0;
+        } 
+    }
+    .made_by{
+        font-size: 14px;
+        padding: 39px 0 0 0;
+    }
+    
+  }

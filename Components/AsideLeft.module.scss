@@ -1,0 +1,49 @@
+.aside{
+    width: 100%;
+    height: 100%;
+    background: #fffbe0;
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 15px;
+        .navbar{
+            display: flex;
+            flex-direction: column;
+        }
+        .poster{
+            display: flex;
+            justify-content: center;
+            color: #890126;
+            font-size: 26px;
+            font-weight: 700;
+            padding: 40px 0;
+            background: radial-gradient(#fff,#fffbe0);
+        }
+        .poster:hover{
+            font-weight: 900;
+            cursor: pointer;
+            background: radial-gradient(#fff,#fffbe0);
+            text-decoration: underline #890126;
+        }
+        img{
+            margin: 20px 0 ;
+            width: calc(100% - 1%);
+            height: calc(100% - 1%);
+        }
+        .qr_assessment{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            .title_assesment, .bottom_text{
+                color: #890126;
+                font-weight: 700;
+                .redirect{
+                   color:#890126;  
+                }
+            }
+        }
+    }
+}

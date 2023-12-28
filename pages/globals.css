@@ -1,0 +1,170 @@
+/* html {
+    --main-color: red;
+} */
+body{
+    margin: 0;
+    --main-color: #6b001c; 
+}
+.title{
+    color: #6b001c;
+    font-size: 35px;
+    font-weight: 900;
+    padding-top: 15px ;
+    letter-spacing: 0.5rem ;
+    text-align: center;
+    box-shadow: 0 2px 0 #6b001c;
+    margin: 0;
+}
+.content{padding: 20px;}
+
+
+/* html {
+    --font-color1:black;
+    --font-color2:#6b001c;
+    --font-header-color: white;
+    --font-aside-color: #5a2100;
+    --background-html: #f4f1db;
+    --background-header: #6b001c;
+    --header-menu-background: #d0cdbb;
+    --background-aside-left: #fffbe0;
+    --background-main: white;
+    --background-aside-right: white;
+    --background-footer: #d0cdbb;
+
+    --font-size: auto;
+    --font-size20: 20px;
+
+    --letter-spasing: normal; 
+
+    --font: 13px/1.5 'Helvetica Neue', Arial, sans-serif;
+
+    --maxwidth: 1024px;
+    --header_aside_width: 235px
+}
+
+html[data-theme="white"] {
+    --font-color1:black;
+    --font-color2:black;
+    --font-header-color: black;
+    --font-aside-color: black;
+    --background-html: white;
+    --background-header: white;
+    --header-menu-background: white;
+    --background-aside-left: white;
+    --background-main: white;
+    --background-aside-right: white;
+    --background-footer: white;
+}
+
+html[data-theme="black"] {
+    --font-color1:white;
+    --font-color2:white;
+    --font-header-color: white;
+    --font-aside-color: white;
+    --background-html: black;
+    --background-header: black;
+    --header-menu-background: black;
+    --background-aside-left: black;
+    --background-main: black;
+    --background-aside-right: black;
+    --background-footer: black;
+}
+
+html[data-theme="blue"] {
+    --font-color1:rgb(6,52,98);
+    --font-color2:rgb(6,52,98);
+    --font-header-color: rgb(6,52,98);
+    --font-aside-color: rgb(6,52,98);
+    --background-html: rgb(157,209,255);
+    --background-header: rgb(157,209,255);
+    --header-menu-background: rgb(157,209,255);
+    --background-aside-left: rgb(157,209,255);
+    --background-main: rgb(157,209,255);
+    --background-aside-right: rgb(157,209,255);
+    --background-footer: rgb(157,209,255);
+}
+
+html[data-theme="sand"] {
+    --font-color1:rgb(77,75,67);
+    --font-color2:rgb(77,75,67);
+    --font-header-color: rgb(77,75,67);
+    --font-aside-color: rgb(77,75,67);
+    --background-html: rgb(247,243,214);
+    --background-header: rgb(247,243,214);
+    --header-menu-background: rgb(247,243,214);
+    --background-aside-left: rgb(247,243,214);
+    --background-main: rgb(247,243,214);
+    --background-aside-right: rgb(247,243,214);
+    --background-footer: rgb(247,243,214);
+}
+
+html[data-theme="green"] {
+    --font-color1:rgb(169, 228, 77);
+    --font-color2:rgb(169, 228, 77);
+    --font-header-color: rgb(169,228,77);
+    --font-aside-color: rgb(169,228,77);
+    --background-html: rgb(59, 39, 22);
+    --background-header: rgb(59, 39, 22);
+    --header-menu-background: rgb(59,39,22);
+    --background-aside-left: rgb(59, 39, 22);
+    --background-main: rgb(59, 39, 22);
+    --background-aside-right: rgb(59, 39, 22);
+    --background-footer: rgb(59, 39, 22);
+}
+
+
+html[data-font_size="18px"] {
+    --font-size: 18px;
+    --font-size20: 18px;
+}
+html[data-font_size="24px"] {
+    --font-size: 24px;
+    --font-size20: 24px;
+}
+html[data-font_size="30px"] {
+    --font-size: 30px;
+    --font-size20: 30px;
+}
+
+
+
+html[data-letter_spasing="1px"] {
+    --letter-spasing: 1px;
+}
+html[data-letter_spasing="3px"] {
+    --letter-spasing: 3px;
+}
+html[data-letter_spasing="5px"] {
+    --letter-spasing: 5px;
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    --transition-bg-time: .5s;
+    --transition-color-time: .2s;
+    --transition-font-size-time: .1s;
+    --transition-letter-spasing-time: .1s;
+}
+
+body {
+    background: var(--background-html);
+    color: var(--font-color2);
+
+    font-size: var(--font-size);
+
+    letter-spacing: var(--letter-spasing);
+
+    transition: background var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
+
+    display: none;
+}
+.max_width {
+    max-width: var(--maxwidth);
+    margin: 0 auto;
+}
+.flex_row {
+    display: flex;
+} */
