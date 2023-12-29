@@ -108,85 +108,38 @@ const dataMenu = [
 
 export default function Menu() {
     const[flag, setFlag] = useState(false)
-
+    const[menu, setMenu] = useState(dataMenu)
     useEffect(() => {
-        if(!flag){
-            // ((e) =>{
-
-            //     const cell_menu = e.currentTarget
-            //     console.log(cell_menu);
-            //     console.log(cell_menu.dataset.index);
-            //     const ul = document.createElement('ul')
-            //     ul.style.fontSize = '20px'
-            //     const cellIndex = dataMenu[cell_menu.dataset.index].submenu
-            //     console.log(cellIndex.length * 40);
-            //     ul.style.height = `${(cellIndex.length * 40) + 70}px`
-            //     ul.style.background = '#6b001c'
-            //     for(let i = 0; i < dataMenu[cell_menu.dataset.index].submenu.length; i++){
-            //         const li = document.createElement('li')
-            //         li.classList.add('subnav')
-            //         const a = document.createElement('a')
-            //         a.classList.add('a')
-            //         a.href = dataMenu[cell_menu.dataset.index].submenu[i].link
-            //         a.textContent = dataMenu[cell_menu.dataset.index].submenu[i].name
-            //         li.append(a)
-            //         ul.append(li)
-            //     }
-            //     console.log(ul);
-            //     cell_menu.append(ul)
-            // })
-        }
-    }, [flag])
+        console.log(flag);
+        setMenu(dataMenu)
+    }, [menu, flag])
     
     function dropDown(e){
         e.preventDefault()
+        console.log(e.currentTarget.children);
+        e.currentTarget.children[1].style.display = 'flex'
+        // e.currentTarget.children[1].classList.remove('submenu')
+        // e.currentTarget.children[1].classList.add('active')
+        console.log(e.currentTarget.children[1]);
         setFlag(true)
-        // const children = document.querySelectorAll('ul.subnav')
-        // console.log(children);
-        // for(let i = 0; i < children.length; i++){
-        //     children[i].remove()
-        // }
-        // const cell_menu = e.currentTarget
-        // console.log(cell_menu);
-        // console.log(cell_menu.dataset.index);
-        // const ul = document.createElement('ul')
-        // ul.style.fontSize = '20px'
-        // const cellIndex = dataMenu[cell_menu.dataset.index].submenu
-        // console.log(cellIndex.length * 40);
-        // ul.style.height = `${(cellIndex.length * 40) + 70}px`
-        // ul.style.background = '#6b001c'
-        // for(let i = 0; i < dataMenu[cell_menu.dataset.index].submenu.length; i++){
-        //     const li = document.createElement('li')
-        //     li.classList.add('subnav')
-        //     const a = document.createElement('a')
-        //     a.classList.add('a')
-        //     a.href = dataMenu[cell_menu.dataset.index].submenu[i].link
-        //     a.textContent = dataMenu[cell_menu.dataset.index].submenu[i].name
-        //     li.append(a)
-        //     ul.append(li)
-        // }
-        // console.log(ul);
-        // cell_menu.append(ul)
-    
     }
 
     function cleanMenu(e){
         e.preventDefault()
-        const children = document.querySelectorAll('ul.subnav')
-        console.log(children);
-        for(let i = 0; i < children.length; i++){
-            children[i].remove()
-        }
+        e.currentTarget.children[1].style.display = 'none'
+        // e.currentTarget.children[1].classList.add('submenu')
+        console.log(e.currentTarget.children[1]);
+        setFlag(false)
     }
 
     return(
         <menu className={styles.menu} > 
-            {dataMenu.map((item_menu, index) =>
+            {menu.map((item_menu, index) =>
              <div className={styles.cell_menu} 
              data-index={index} 
              key={index}
-            //  onMouseOver={dropDown}
-            //  onMouseOut={cleanMenu}
+             onMouseOver={dropDown}
+             onMouseOut={cleanMenu}
              >
                 <div>
                     <a className={styles.link} 
@@ -194,14 +147,9 @@ export default function Menu() {
                         >{item_menu.title}
                     </a>
                 </div>
-                <div>
-                    {console.log(item_menu.submenu)}
-                    <div className={styles.submenu} style={{height: `${item_menu.submenu.length * 40}px`}}>
-                        {/* {console.log(item_menu.submenu)} */}
-                        {item_menu.submenu && item_menu.submenu.map((submenu, index) =>{
-                            // {console.log(submenu)}
-                            <div className={styles.li}><a href={submenu.link} className={styles.link} key={index}>{submenu.name}</a></div>
-                        })}
+                <div className={styles.submenu}>
+                    <div className={styles.item}>
+                        {item_menu.submenu && item_menu.submenu.map((sub, index) => <div className={styles.sub_item}><a href={sub.link}>{sub.name}</a></div>)}
                     </div>
                 </div>
             </div>)}
