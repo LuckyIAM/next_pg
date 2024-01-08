@@ -6,7 +6,7 @@ export default async function getLibrarian(req, res) {
         // query: 'SELECT id, page_id, lang, title, meta, content FROM pages_content WHERE title=?',
         // values: ['Основной фонд']
         query: `SELECT id, page_id, lang, title, meta, content 
-        FROM pages_content WHERE title='Основной фонд'`,
+        FROM pages_content WHERE title='Отдел хранения библиотечных фондов'`,
         values: []
     })
     res.json(result)

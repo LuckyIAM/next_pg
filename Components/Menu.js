@@ -100,7 +100,7 @@ const dataMenu = [
     },
     {
         title: 'КОНТАКТЫ',
-        href: '/',
+        href: '/pages/contacts',
         data_set: 'contacts',
         submenu: []
     },

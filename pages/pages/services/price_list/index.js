@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function ServicesPage() {
     const path =  process.env.NEXT_PUBLIC_URL
-    const templatePage = useTemplatePage(`${path}api/pages/price_list`)
+    const templatePage = useTemplatePage(`${path}api/pages/price_list`, 'Прейскурант платных услуг')
     useEffect(() => {
         templatePage.GET()
     }, [])

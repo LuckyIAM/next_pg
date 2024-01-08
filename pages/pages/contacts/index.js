@@ -4,7 +4,7 @@ import Layout from '@/pages/layout'
 
 
 export default function ContactsPage() {
-    const templatePage = useTemplatePage('/api/pages/contacts')
+    const templatePage = useTemplatePage('/api/pages/contacts', 'Контакты')
 
     useEffect(()=>{
         templatePage.GET()

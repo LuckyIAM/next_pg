@@ -4,7 +4,7 @@ import Layout from "@/pages/layout";
 
 
 export default function PageOtdel() {
-    const templatePage = useTemplatePage('/api/pages/departments/information_technology')
+    const templatePage = useTemplatePage('/api/pages/departments/information_technology', 'Центр информационных технологий')
 
     useEffect(() => {
         templatePage.GET()

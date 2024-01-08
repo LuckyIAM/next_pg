@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function StorageDepartment() {
     const path =  process.env.NEXT_PUBLIC_URL
-    const templatePage = useTemplatePage(`${path}api/pages/storage_department`)
+    const templatePage = useTemplatePage(`${path}api/pages/storage_department`, 'Отдел хранения библиотечных фондов')
     useEffect(() => {
         templatePage.GET()
     }, [])

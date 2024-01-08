@@ -4,7 +4,7 @@ import Layout from '@/pages/layout'
 
 export default function HistoryPage() {
     const path = process.env.NEXT_PUBLIC_URL
-    const templatePage = useTemplatePage(`${path}api/pages/history`)
+    const templatePage = useTemplatePage(`${path}api/pages/history`, 'Из истории РГБИ')
 
     useEffect(()=>{
         templatePage.GET()

@@ -1,4 +1,4 @@
-
+import Head from "next/head";
 import CardRules from "@/Components/Card";
 import Layout from "@/pages/layout";
 import styles from './index.module.scss'
@@ -27,7 +27,10 @@ export default function DepartmentsPage() {
     return(
         <Layout>
             <div className={styles.wrapper}>
-                <h1 className={styles.title} >Отделы библиотеки</h1>
+                <Head>
+                    <title>Нормативные документы</title>
+                </Head>
+                <h1 className={styles.title} >Нормативные документы</h1>
                 <main className={styles.departments_box}>
                     {dataDepartments.map((department, index) => <CardRules
                     key={index}

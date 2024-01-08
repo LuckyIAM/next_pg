@@ -21,7 +21,7 @@ const dataPage = [
     },
 ]
 export default function Page3DPanoramasOfTheLibrary() {
-    const linkPage = useTemplateLinkPage(dataPage, '3D панорамы библиотеки')
+    const linkPage = useTemplateLinkPage(dataPage, '3D панорамы библиотеки', '3D панорамы библиотеки')
     return(<Layout>
         {linkPage.getRendiring()}
     </Layout>

@@ -41,7 +41,7 @@ const dataPage = [
 ]
 
 export default function AboutLibraryPage() {
-    const linkPage = useTemplateLinkPage(dataPage, 'О библиотеке')
+    const linkPage = useTemplateLinkPage(dataPage, 'О библиотеке', 'О библиотеке')
 
     return(<Layout>
         {linkPage.getRendiring()}

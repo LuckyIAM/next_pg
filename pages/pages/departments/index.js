@@ -57,7 +57,7 @@ const dataDepartments = [
 ]
 
 export default function DepartmentsPage() {
-    const linkPage = useTemplateLinkPage(dataDepartments, 'Отделы библиотеки', '/pages/departments/')
+    const linkPage = useTemplateLinkPage(dataDepartments, 'Отделы библиотеки', 'Отделы библиотеки', '/pages/departments/')
     return(
         <Layout>
             {/* Template with icon */}

@@ -5,7 +5,7 @@ import Layout from "@/pages/layout";
 
 export default function PageOtdel() {
     const path = process.env.NEXT_PUBLIC_URL
-    const templatePage = useTemplatePage(`${path}api/pages/departments/acquisition`)
+    const templatePage = useTemplatePage(`${path}api/pages/departments/acquisition`, 'Отдел комплектования')
 
     useEffect(() => {
         templatePage.GET()
