@@ -11,10 +11,11 @@ export default function useTemplatePage(url) {
                 cache: 'force-cache'
             })
         const result = await res.json()
+        console.log(result);
         setTitle(result[0].title)
         let startIndexSlice = result[0].content.indexOf('</p>') + 5
         setContent(result[0].content.slice(startIndexSlice,))
-        // console.log(result[0].content.slice(startIndexSlice,));
+        console.log(result[0].content.slice(startIndexSlice,));
     }
 
 

@@ -1,11 +1,11 @@
-import Link from 'next/link'
+import { useRouter } from 'next/router';
 import styles from './Menu.module.css'
-import { useEffect, useRef, useState } from 'react'
+
 
 const dataMenu = [
     {
         title: 'НОВОСТИ',
-        href: '/',
+        href: '/news',
         data_set: 'news',
         submenu: [
             {name: 'Архив',
@@ -14,62 +14,63 @@ const dataMenu = [
     },
     {
         title: 'О БИБЛИОТЕКЕ',
-        href: '/',
+        href: '/pages/about_library',
         data_set: 'about',
         submenu: [
             {name: 'Адрес и время работы РГБИ',
-            link: '/'},
+            link: '/pages/about/adress'},
             {name: 'Запись читателей',
-            link: '/'},
+            link: '/pages/about/reader_entry'},
             {name: 'Общая информация',
-            link: '/'},
+            link: '/pages/about/info'},
             {name: 'Из истории РГБИ',
-            link: '/'},
+            link: '/pages/about/history'},
             {name: 'Структура библиотеки',
-            link: '/'},
+            link: '/pages/departments'},
             {name: 'Реквизиты библиотеки',
-            link: '/'},
+            link: '/pages/about/requisites'},
             {name: 'Нормативные документы',
-            link: '/'},
+            link: '/pages/about/regulations'},
             {name: 'Попечительский совет',
-            link: '/'},
+            link: '/pages/about/board_of_trustees'},
             {name: 'Противодействие коррупции',
             link: '/'},
-            
+            {name: '3D панорамы библиотеки',
+            link: '/pages/about/3D_panoramas_of_the_library'},
         ], 
     },
     {
         title: 'УСЛУГИ',
-        href: '/',
+        href: '/pages/services',
         data_set: 'services',
         submenu: [
             {name: 'Платные',
-            link: '/'},
+            link: '/pages/services/price_list'},
             {name: 'Бесплатные',
             link: '/'}
         ]
     },
     {
         title: 'ФОНДЫ',
-        href: '/',
+        href: '/pages/funds',
         data_set: 'funds',
         submenu: [
             {name: 'Основной фонд',
-            link: '/'},
+            link: '/pages/funds/storage_department'},
             {name: 'Справочно-информационный фонд',
-            link: '/'},
+            link: '/pages/funds/reference_and_information_fund'},
             {name: 'Фонд изобразительных материалов',
-            link: '/'},
+            link: '/pages/funds/department_of_iconographic_materials'},
             {name: 'Фонд отдела Абонемента',
-            link: '/'},
+            link: '/pages/funds/subscription_department_fund'},
             {name: 'Фонд газетных вырезок и театральных программ',
-            link: '/'},
+            link: '/pages/funds/newspaper_clippings_and_theater_programs_foundation'},
             {name: 'Видеофонд',
-            link: '/'},
+            link: '/pages/funds/video_fund'},
             {name: 'Фонд изданий на микрофишах',
-            link: '/'},
+            link: '/pages/funds/fund_of_publications_on_microfiche'},
             {name: 'Архивный фонд',
-            link: '/'},
+            link: '/pages/funds/archive_fund'}
         ]
     
     },
@@ -107,49 +108,51 @@ const dataMenu = [
 ]
 
 export default function Menu() {
-    const[flag, setFlag] = useState(false)
-    const[menu, setMenu] = useState(dataMenu)
-    useEffect(() => {
-        console.log(flag);
-        setMenu(dataMenu)
-    }, [menu, flag])
-    
+    const library = useRouter()
+    const linkPage = useRouter()
+
     function dropDown(e){
         e.preventDefault()
-        console.log(e.currentTarget.children);
+        // console.log(e.currentTarget);
+        e.currentTarget.children[1].parentElement.style.background = '#6b001c'
+        e.currentTarget.children[1].parentElement.style.color = '#fff'
+        e.currentTarget.children[1].parentElement.style.boxShadow= '0 5px 10px -40px #e0dcd0, 0 5px 10px -40px #e0dcd0'
         e.currentTarget.children[1].style.display = 'flex'
-        // e.currentTarget.children[1].classList.remove('submenu')
-        // e.currentTarget.children[1].classList.add('active')
-        console.log(e.currentTarget.children[1]);
-        setFlag(true)
     }
 
     function cleanMenu(e){
         e.preventDefault()
+        e.currentTarget.style.fontWeight = '800'
         e.currentTarget.children[1].style.display = 'none'
-        // e.currentTarget.children[1].classList.add('submenu')
-        console.log(e.currentTarget.children[1]);
-        setFlag(false)
+        e.currentTarget.children[1].parentElement.style.background = '#fffbe0'
+        e.currentTarget.children[1].parentElement.style.color = '#6b001c'
+    }
+    function goTo(e){
+        e.preventDefault()
+        // console.log(e.currentTarget);
+        library.push(e.currentTarget.dataset.href)
+    }
+    function goToPage(e){
+        e.preventDefault()
+        // console.log(e.currentTarget.dataset.link);
+        linkPage.push(e.currentTarget.dataset.link)
     }
 
     return(
         <menu className={styles.menu} > 
-            {menu.map((item_menu, index) =>
+            {dataMenu.map((item_menu, index) =>
              <div className={styles.cell_menu} 
-             data-index={index} 
              key={index}
              onMouseOver={dropDown}
              onMouseOut={cleanMenu}
+             
              >
-                <div>
-                    <a className={styles.link} 
-                        href={item_menu.href} 
-                        >{item_menu.title}
-                    </a>
+                <div className={styles.link} data-href={item_menu.href} onClick={goTo}>
+                    {item_menu.title}
                 </div>
                 <div className={styles.submenu}>
                     <div className={styles.item}>
-                        {item_menu.submenu && item_menu.submenu.map((sub, index) => <div className={styles.sub_item}><a href={sub.link}>{sub.name}</a></div>)}
+                        {item_menu.submenu && item_menu.submenu.map((sub, index) => <div className={styles.sub_item} data-link={sub.link} key={index} onClick={goToPage}>{sub.name}</div>)}
                     </div>
                 </div>
             </div>)}

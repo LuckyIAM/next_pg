@@ -1,0 +1,23 @@
+.about_library{
+    margin: 15px 0px;
+    .title_page{
+        font-weight: 800;
+        font-size: 26px;
+        text-align: center;
+    }
+    .subpages{
+        .subpage{
+            margin: 5px 10px;
+            font-size: 22px;
+            list-style: none;
+            span{
+                color: #6b001c; 
+            }
+            a{
+                color: #6b001c;
+            }
+            
+        }
+        
+    }
+}

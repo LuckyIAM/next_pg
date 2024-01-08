@@ -3,7 +3,8 @@ import useTemplatePage from '@/hooks/useTemplatePage'
 import Layout from '@/pages/layout'
 
 export default function HistoryPage() {
-    const templatePage = useTemplatePage('/api/pages/history')
+    const path = process.env.NEXT_PUBLIC_URL
+    const templatePage = useTemplatePage(`${path}api/pages/history`)
 
     useEffect(()=>{
         templatePage.GET()

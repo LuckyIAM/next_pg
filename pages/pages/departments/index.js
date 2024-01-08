@@ -1,78 +1,81 @@
-import { useState } from "react";
 import CardDepartmens from "@/Components/Card";
+import useTemplateLinkPage from '@/hooks/useTemplateLinkPage'
 import Layout from "@/pages/layout";
 import styles from './index.module.scss'
 
 const dataDepartments = [
     {
-        title: 'Отдел обслуживания читальных залов, статистики и контроля',
+        name: 'Отдел обслуживания читальных залов, статистики и контроля',
         icon: '/front desk.svg',
-        href: 'front_desk'
+        link: 'front_desk'
     },
     {
-        title: 'Отдел хранения библиотечных фондов',
+        name: 'Отдел хранения библиотечных фондов',
         icon: '/librarian.svg',
-        href: 'librarian'
+        link: 'librarian'
     },
     {
-        title: 'Отдел научной обработки',
+        name: 'Отдел научной обработки',
         icon: '/scientific_processing.svg',
-        href: 'scientific_processing'
+        link: 'scientific_processing'
     },
     {
-        title: 'Отдел научной информации',
+        name: 'Отдел научной информации',
         icon: '/scientific_information.svg',
-        href: 'scientific_information'
+        link: 'scientific_information'
     },
     {
-        title: 'Центр визуальной информации',
+        name: 'Центр визуальной информации',
         icon: '/visual_information.svg',
-        href: 'visual_information'
+        link: 'visual_information'
     },
     {
-        title: 'Отдел абонемента',
+        name: 'Отдел абонемента',
         icon: '/abonement.svg',
-        href: 'abonement'
+        link: 'abonement'
     },
     {
-        title: 'Отдел научной библиографии',
+        name: 'Отдел научной библиографии',
         icon: '/scientific_bibliography.svg',
-        href: 'scientific_bibliography'
+        link: 'scientific_bibliography'
     },
     {
-        title: 'Отдел культурных программ',
+        name: 'Отдел культурных программ',
         icon: '/cultural_programs.svg',
-        href: 'cultural_programs'
+        link: 'cultural_programs'
     },
     {
-        title: 'Центр информационных технологий',
+        name: 'Центр информационных технологий',
         icon: '/information_technology.svg',
-        href: 'information_technology'
+        link: 'information_technology'
     },
     {
-        title: 'Отдел комплектования',
+        name: 'Отдел комплектования',
         icon: '/acquisition.svg',
-        href: 'acquisition'
+        link: 'acquisition'
     }   
 ]
 
 export default function DepartmentsPage() {
-
+    const linkPage = useTemplateLinkPage(dataDepartments, 'Отделы библиотеки', '/pages/departments/')
     return(
         <Layout>
-            <div className={styles.wrapper}>
+            {/* Template with icon */}
+            {/* <div className={styles.wrapper}>
                 <h1 className={styles.title} >Отделы библиотеки</h1>
                 <main className={styles.departments_box}>
                     {dataDepartments.map((department, index) => <CardDepartmens
                     key={index}
                     icon={department.icon}
-                    title={department.title}
-                    href={department.href}
+                    title={department.name}
+                    href={department.link}
                     slug='pages/departments'
                     flag={true}
                     />)}
                 </main>
-            </div>
+            </div> */}
+            {/* Template with out icon */}
+            {linkPage.getRendiring()}
         </Layout>
     )
 }

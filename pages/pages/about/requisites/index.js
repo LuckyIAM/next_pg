@@ -3,7 +3,8 @@ import useTemplatePage from "@/hooks/useTemplatePage"
 import Layout from "@/pages/layout"
 
 export default function PageReaderEtry() {
-    const templatePage = useTemplatePage('/api/pages/requisites')
+    const path = process.env.NEXT_PUBLIC_URL
+    const templatePage = useTemplatePage(`${path}api/pages/requisites`)
 
     useEffect(()=>{
         templatePage.GET()
